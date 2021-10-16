@@ -4,7 +4,6 @@ import type {
 	IEventsFields,
 	IGalleryAlbumFields,
 	IMembersFields,
-	INews,
 	INewsFields,
 	IPartnersFields,
 } from "@/@types/generated/contentful";
@@ -14,10 +13,18 @@ const client = createClient({
 	accessToken: process.env.NEXT_CONTENTFUL_ACCESS_TOKEN ?? "ErrorNoAccesToken",
 });
 
-export const getMembers = async () =>
-	client.getEntries<IMembersFields>({
+export const getMembers = async () => {
+	const members = await client.getEntries<IMembersFields>({
 		content_type: "members",
 	});
+	members.items.sort(
+		(a, b) =>
+			a.fields.order - b.fields.order ||
+			a.fields.name.localeCompare(b.fields.name, "hu"),
+	);
+
+	return members;
+};
 
 export const getEvents = async () => {
 	const events = await client.getEntries<IEventsFields>({
@@ -49,10 +56,15 @@ export const getEvent = async (slug: string | string[] | undefined) => {
 	return event;
 };
 
-export const getPartners = async () =>
-	client.getEntries<IPartnersFields>({
+export const getPartners = async () => {
+	const partners = await client.getEntries<IPartnersFields>({
 		content_type: "partners",
 	});
+
+	partners.items.sort((a, b) => a.fields.name.localeCompare(b.fields.name));
+
+	return partners;
+};
 
 export const getNews = async () => {
 	const news = await client.getEntries<INewsFields>({
