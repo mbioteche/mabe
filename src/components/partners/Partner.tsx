@@ -1,6 +1,7 @@
+import type { Entry } from "contentful";
 import Image from "next/image";
 
-import type { IPartnersFields } from "@/@types/generated/contentful";
+import type { TypePartnersSkeleton } from "@/@types/generated";
 
 export function Partner({
 	logo,
@@ -9,15 +10,19 @@ export function Partner({
 	name,
 	phone,
 	website,
-}: IPartnersFields) {
+}: Entry<
+	TypePartnersSkeleton,
+	"WITHOUT_UNRESOLVABLE_LINKS",
+	string
+>["fields"]) {
 	return (
-		<div className="flex h-full w-full max-w-sm flex-col rounded-gallery p-2 shadow-gallery">
-			<div className="relative mx-auto h-40 w-40 shrink-0 p-4">
+		<div className="flex size-full max-w-sm flex-col rounded-gallery p-2 shadow-gallery">
+			<div className="relative mx-auto size-40 shrink-0 p-4">
 				<Image
 					layout="fill"
-					objectFit="contain"
-					src={`https:${logo?.fields.file.url}`}
+					src={`https:${logo?.fields?.file?.url}`}
 					alt={`${name} logója`}
+					className="object-contain"
 				/>
 			</div>
 			<div className="w-full flex-1 space-y-4 rounded-b-lg p-6 text-center text-xs">

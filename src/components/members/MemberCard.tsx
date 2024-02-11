@@ -1,21 +1,28 @@
+import type { Entry } from "contentful";
 import Image from "next/image";
 
-import type { IMembersFields } from "@/@types/generated/contentful";
+import type { TypeMembersSkeleton } from "@/@types/generated";
 
 import placeholderImage from "../../../public/Portrait_Placeholder.png";
 
-export function MemberCard({ name, image, position, email }: IMembersFields) {
+export function MemberCard({
+	name,
+	image,
+	position,
+	email,
+}: Entry<TypeMembersSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
 		<div className="flex w-full flex-row items-center space-x-3 rounded-2xl shadow-memberCard">
-			<div className="relative h-28 w-28 shrink-0 border-r-4 border-turquoise-dark xl:h-36 xl:w-36 2xl:h-48 2xl:w-48">
+			<div className="relative size-28 shrink-0 border-r-4 border-turquoise-dark xl:size-36 2xl:size-48">
 				<Image
 					src={
-						image?.fields ? `https:${image.fields.file.url}` : placeholderImage
+						image?.fields?.file
+							? `https:${image?.fields?.file?.url}`
+							: placeholderImage
 					}
 					layout="fill"
 					alt={name}
-					className="h-full w-full rounded-l-2xl"
-					objectFit="cover"
+					className="size-full rounded-l-2xl object-cover"
 				/>
 			</div>
 			<div className="flex flex-col self-stretch py-2 pr-3 xl:py-4">

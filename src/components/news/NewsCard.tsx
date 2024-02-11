@@ -1,7 +1,9 @@
+import clsx from "clsx";
+import type { Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
 
-import type { INewsFields } from "@/@types/generated/contentful";
+import type { TypeNewsSkeleton } from "@/@types/generated";
 import { NewsAuthor } from "@/components/news/NewsAuthor";
 
 const datePrintConfig = {
@@ -19,20 +21,22 @@ export function NewsCard({
 	author,
 	miniContent,
 	date,
-}: INewsFields) {
+}: Entry<TypeNewsSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
 		<Link href={`/blog/${slug}`} passHref legacyBehavior>
-			<div className="flex h-full w-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
+			<div className="flex size-full cursor-pointer flex-col rounded-gallery bg-white shadow-event xl:flex-row">
 				<div className="relative h-48 w-full xl:h-auto xl:min-h-newsImage xl:w-2/3">
 					<Image
 						src={
 							coverImage
-								? `https:${coverImage.fields.file.url}`
+								? `https:${coverImage.fields?.file?.url}`
 								: "/missing_img.png"
 						}
-						className="rounded-t-md xl:rounded-l-md xl:rounded-t-none"
+						className={clsx(
+							"rounded-t-md xl:rounded-l-md xl:rounded-t-none",
+							coverImage ? "object-cover" : "object-contain",
+						)}
 						layout="fill"
-						objectFit={coverImage ? "cover" : "contain"}
 						alt={title}
 					/>
 				</div>

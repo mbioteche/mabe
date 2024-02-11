@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import clsx from "clsx";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const fullTitle = `${title} | Magyar Biotechnológus-hallgatók Egyesülete`;
 
 	const coverImage = {
-		url: `https:${image.fields.file.url}`,
+		url: `https:${image?.fields?.file?.url}`,
 		width: 1200,
 		height: 630,
 		alt: title,
@@ -51,10 +52,9 @@ export default async function EventsPage({ params }: Props) {
 		<article>
 			<div className="relative aspect-video w-full">
 				<Image
-					src={image ? `https:${image.fields.file.url}` : "/missing_img.png"}
-					className="w-full"
+					src={image ? `https:${image?.fields?.file?.url}` : "/missing_img.png"}
+					className={clsx("w-full", image ? "object-cover" : "object-contain")}
 					fill
-					objectFit={image ? "cover" : "contain"}
 					alt={title}
 				/>
 			</div>
