@@ -70,7 +70,7 @@ export default async function EventsPage({ params }: Props) {
 						</div>
 					)}
 				</div>
-				<div className="mb-10 text-2xl font-bold text-turquoise-dark lg:text-4xl">
+				<div className="mb-10 text-2xl font-bold text-[#00AB96] lg:text-4xl">
 					{location}
 				</div>
 				<div className="prose mb-10 max-w-none lg:prose-xl">

@@ -43,14 +43,14 @@ export function EventCard({
 							</div>
 						)}
 					</div>
-					<div className="mb-6 text-lg font-bold text-turquoise-dark">
+					<div className="mb-6 text-lg font-bold text-[#00AB96]">
 						{location}
 					</div>
 					{miniContent && <div className="mb-6">{miniContent}</div>}
 				</div>
 				<Link
 					href={`/esemenyek/${slug}`}
-					className="flex items-center place-self-end self-end rounded-full border-2 border-turquoise-dark pl-2 text-turquoise-dark hover:bg-turquoise-dark hover:text-white"
+					className="flex items-center place-self-end self-end rounded-full border-2 border-[#00AB96] pl-2 text-[#00AB96] hover:bg-[#00AB96] hover:text-white"
 				>
 					<span className="mr-0.5 text-sm font-bold capitalize">
 						tovább olvasom

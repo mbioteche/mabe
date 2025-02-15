@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Router from "next/router";
 import React, { useMemo } from "react";
 
@@ -13,15 +12,13 @@ import { Logo } from "@/components/header/Logo";
 export function Header() {
 	const [isNavbarOpen, setNavbarOpen] = React.useState(false);
 
-	const pathname = usePathname();
-
 	Router.events.on("routeChangeStart", () => {
 		setNavbarOpen(false);
 	});
 
 	useMemo(() => {
 		setNavbarOpen(false);
-	}, [pathname]);
+	}, []);
 
 	if (isNavbarOpen) {
 		return (
@@ -34,24 +31,24 @@ export function Header() {
 	}
 
 	return (
-		<div className="sticky top-0 z-40 grid h-14 w-full grid-cols-3 items-center bg-white px-8 align-middle font-roboto-slab text-gray shadow-md lg:flex lg:flex-row lg:justify-center lg:space-x-16 lg:px-16 lg:py-0">
-			<div className="flex items-center lg:hidden">
+		<div className="sticky top-0 z-40 grid h-[60px] w-full grid-cols-2 items-center bg-white px-[20px] md:px-[32px] align-middle font-ss3 text-gray shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1)] lg:flex lg:flex-row lg:justify-center lg:space-x-16 lg:px-16 lg:py-0">
+			<div className="flex items-center ">
+				<Logo />
+			</div>
+
+			<nav className="hidden lg:block">
+				<ul className="flex flex-row space-x-[28px] items-center">
+					<HeaderLinkList />
+				</ul>
+			</nav>
+
+			<div className="flex items-center justify-end lg:hidden">
 				<HamburgerButton
 					onClick={() => {
 						setNavbarOpen(!isNavbarOpen);
 					}}
 				/>
 			</div>
-
-			<div className="flex items-center justify-center">
-				<Logo />
-			</div>
-
-			<nav className="hidden lg:block">
-				<ul className="flex flex-row space-x-7">
-					<HeaderLinkList />
-				</ul>
-			</nav>
 		</div>
 	);
 }

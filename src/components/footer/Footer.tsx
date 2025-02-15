@@ -22,7 +22,7 @@ export async function Footer() {
 					</div>
 				</div>
 
-				<ul className="flex flex-row flex-wrap justify-center gap-2 font-roboto-slab text-lg md:justify-start">
+				<ul className="flex flex-row flex-wrap justify-center gap-2 font-ss3 text-lg md:justify-start">
 					<li>
 						<Link href="/blog">Blog</Link>
 					</li>
@@ -43,14 +43,10 @@ export async function Footer() {
 					</li>
 				</ul>
 
-				<h2 className="text-center font-roboto-slab text-2xl font-medium md:text-left lg:text-4xl">
+				<h2 className="text-center font-ss3 text-2xl font-medium md:text-left lg:text-4xl">
 					Ha érdekel a MaBE tevékenysége, és szeretnél részt venni
 					programjainkon,{" "}
-					<Link
-						scroll
-						href="/csatlakozz"
-						className=" text-turquoise-dark underline"
-					>
+					<Link scroll href="/csatlakozz" className=" text-[#00AB96] underline">
 						csatlakozz
 					</Link>{" "}
 					hozzánk!
@@ -58,7 +54,7 @@ export async function Footer() {
 
 				<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
 					<div className="flex flex-col items-center md:items-start">
-						<span className="font-roboto text-sm font-medium">
+						<span className="font-ss3 text-sm font-medium">
 							designed and developed by
 						</span>
 						<a href="https://schdesign.hu" target="_blank" rel="noreferrer">

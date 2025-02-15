@@ -6,7 +6,7 @@ export function BottomSection() {
 	return (
 		<section className="mx-auto flex flex-col-reverse items-center px-10 pt-8 md:mb-44 md:max-w-4xl md:flex-row md:pt-48 lg:max-w-7xl">
 			<div className="max-w-2xl sm:text-right md:mr-40">
-				<h3 className="mb-11 font-roboto-slab text-3xl font-semibold uppercase md:text-4xl lg:text-5xl">
+				<h3 className="mb-11 font-ss3 text-3xl font-semibold uppercase md:text-4xl lg:text-5xl">
 					baráti eszmecserék
 				</h3>
 				<p className="text-2xl">

@@ -41,8 +41,7 @@ module.exports = {
 				newsImage: "492px",
 			},
 			fontFamily: {
-				roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
-				"roboto-slab": ["Roboto Slab", ...defaultTheme.fontFamily.serif],
+				ss3: ["Source Sans 3", ...defaultTheme.fontFamily.sans],
 			},
 			typography: (theme) => ({
 				DEFAULT: {

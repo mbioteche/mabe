@@ -5,26 +5,22 @@ import { usePathname } from "next/navigation";
 type HeaderLinkProps = {
 	text: string;
 	href: string;
-	specialChar?: string;
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export function HeaderLink({ text, href, specialChar }: HeaderLinkProps) {
+export function HeaderLink({ text, href }: HeaderLinkProps) {
 	const pathname = usePathname();
 
 	return (
-		<li>
+		<li className="mt-[1px]">
 			<Link
 				href={href}
 				className={clsx(
-					pathname === href && "text-turquoise-dark",
-					"inline-block w-full font-bold hover:text-turquoise-dark",
+					"inline-block w-full font-bold hover:text-[#00AB96] text-[18px] leading-[24px]",
+					pathname === href ? "text-[#00AB96]" : "text-[#222222]",
 				)}
 			>
 				{text}
-				{specialChar !== undefined && (
-					<span className="ml-0.5 text-turquoise-dark">{specialChar}</span>
-				)}
 			</Link>
 		</li>
 	);

@@ -67,7 +67,7 @@ export default function RootLayout({
 				</>
 			)}
 			<body>
-				<div className="flex min-h-screen flex-col font-roboto">
+				<div className="flex min-h-screen flex-col font-ss3">
 					<Header />
 					<main className="flex-1">{children}</main>
 					<Footer />

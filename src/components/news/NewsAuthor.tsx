@@ -44,9 +44,7 @@ export function NewsAuthor({
 			<div className="px-8">
 				<h1 className="font-bold">{name}</h1>
 				{/* this part is used for Author description or News Date on blog/[slug] page */}
-				<p
-					className={clsx(usedAsDate && "text-2xl italic text-turquoise-dark")}
-				>
+				<p className={clsx(usedAsDate && "text-2xl italic text-[#00AB96]")}>
 					{usedAsDate && lowerContent
 						? new Date(lowerContent).toLocaleString("hu", {
 								month: "long",

@@ -17,7 +17,7 @@ export default async function DocumentsPage() {
 	const y = Array.from(years).sort((a, b) => b - a);
 	return (
 		<>
-			<h1 className="mb-12 font-roboto-slab text-5xl">Dokumentumok</h1>
+			<h1 className="mb-12 font-ss3 text-5xl">Dokumentumok</h1>
 
 			{y.length > 0 &&
 				y.map((e) => (
