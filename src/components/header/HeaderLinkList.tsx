@@ -9,7 +9,7 @@ export function HeaderLinkList() {
 			<HeaderLink text="Események" href="/esemenyek" />
 			<HeaderLink text="Dokumentumok" href="/dokumentumok" />
 			<JoinUsButton
-				isHeader={true}
+				isHeader
 				link="https://forms.gle/uu4v3S8HJsCEFghc7"
 			/>
 		</>

@@ -31,13 +31,13 @@ export function Header() {
 	}
 
 	return (
-		<div className="sticky top-0 z-40 grid h-[60px] w-full grid-cols-2 items-center bg-white px-[20px] md:px-[32px] align-middle font-ss3 text-gray shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1)] lg:flex lg:flex-row lg:justify-center lg:space-x-16 lg:px-16 lg:py-0">
+		<div className="sticky top-0 z-40 grid h-[60px] w-full grid-cols-2 items-center bg-white px-[20px] align-middle font-ss3 text-gray shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1)] md:px-[32px] lg:flex lg:flex-row lg:justify-center lg:space-x-16 lg:px-16 lg:py-0">
 			<div className="flex items-center ">
 				<Logo />
 			</div>
 
 			<nav className="hidden lg:block">
-				<ul className="flex flex-row space-x-[28px] items-center">
+				<ul className="flex flex-row items-center space-x-[28px]">
 					<HeaderLinkList />
 				</ul>
 			</nav>

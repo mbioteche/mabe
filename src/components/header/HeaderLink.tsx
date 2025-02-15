@@ -16,7 +16,7 @@ export function HeaderLink({ text, href }: HeaderLinkProps) {
 			<Link
 				href={href}
 				className={clsx(
-					"inline-block w-full font-bold hover:text-[#00AB96] text-[18px] leading-[24px]",
+					"inline-block w-full text-[18px] font-bold leading-[24px] hover:text-[#00AB96]",
 					pathname === href ? "text-[#00AB96]" : "text-[#222222]",
 				)}
 			>

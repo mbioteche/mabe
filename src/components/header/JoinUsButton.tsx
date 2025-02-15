@@ -9,7 +9,7 @@ export function JoinUsButton({ isHeader, link }: JoinUsButtonProps) {
 		<li>
 			{isHeader ? (
 				<a href={link} target="_blank" rel="noopener noreferrer">
-					<div className="flex flex-row w-fit gap-[2px] pt-[5px] pb-[3px] px-[16px] bg-[#00AB96] rounded-[6px] text-white font-bold text-[18px] leading-[24px]">
+					<div className="flex w-fit flex-row gap-[2px] rounded-[6px] bg-[#00AB96] px-[16px] pb-[3px] pt-[5px] text-[18px] font-bold leading-[24px] text-white">
 						<div>Csatlakozz</div>
 						<div>+</div>
 					</div>
