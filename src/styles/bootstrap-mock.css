@@ -1,0 +1,80 @@
+.container-mabe-mabe,
+.container-mabe-fluid,
+.container-mabe-xxl,
+.container-mabe-xl,
+.container-mabe-lg,
+.container-mabe-md,
+.container-mabe-sm,
+.container-mabe {
+	--bs-gutter-x: 1.5rem;
+	--bs-gutter-y: 0;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Row */
+.row-mabe {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+/* Column classes */
+.col-mabe-12 {
+	flex: 0 0 100%;
+	max-width: 100%;
+}
+
+/* For small screens (up to 576px) */
+@media (min-width: 576px) {
+	.container-mabe,
+	.container-mabe-sm {
+		max-width: 540px;
+	}
+}
+
+/* For medium screens (up to 768px) */
+@media (min-width: 768px) {
+	.container-mabe,
+	.container-mabe-sm,
+	.container-mabe-md {
+		max-width: 720px;
+	}
+}
+
+/* For large screens (up to 992px) */
+@media (min-width: 992px) {
+	.container-mabe,
+	.container-mabe-sm,
+	.container-mabe-md,
+	.container-mabe-lg {
+		max-width: 960px;
+	}
+}
+
+/* For extra large screens (up to 1200px) */
+@media (min-width: 1200px) {
+	.container-mabe,
+	.container-mabe-sm,
+	.container-mabe-md,
+	.container-mabe-lg,
+	.container-mabe-xl {
+		max-width: 1140px;
+	}
+}
+
+/* For extra extra large screens (min-width: 1400px and above) */
+@media (min-width: 1400px) {
+	.container-mabe,
+	.container-mabe-sm,
+	.container-mabe-md,
+	.container-mabe-lg,
+	.container-mabe-xl,
+	.container-mabe-xxl {
+		max-width: 1320px;
+	}
+}

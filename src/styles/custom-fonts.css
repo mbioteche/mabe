@@ -1,0 +1,152 @@
+.mabe-h1 {
+	font-size: 30px;
+	line-height: 38px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h1 {
+		font-size: 46px;
+		line-height: 54px;
+	}
+}
+
+.mabe-h2 {
+	font-size: 28px;
+	line-height: 34px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h2 {
+		font-size: 32px;
+		line-height: 40px;
+	}
+}
+
+.mabe-h3 {
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h3 {
+		font-size: 30px;
+		line-height: 38px;
+	}
+}
+
+.mabe-h3b {
+	font-size: 24px;
+	line-height: 28px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h3b {
+		font-size: 30px;
+		line-height: 38px;
+	}
+}
+
+.mabe-h4 {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h4 {
+		font-size: 24px;
+		line-height: 28px;
+	}
+}
+
+.mabe-h4sb {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h4sb {
+		font-size: 24px;
+		line-height: 28px;
+	}
+}
+
+.mabe-h5 {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h5 {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+
+.mabe-h5sb {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h5sb {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+
+.mabe-h6 {
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h6 {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+
+.mabe-h6sb {
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h6sb {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+.mabe-h6b {
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h6b {
+		font-size: 16px;
+		line-height: 22px;
+	}
+}

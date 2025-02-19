@@ -1,96 +1,37 @@
 import Image from "next/image";
-import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import { getGeneralData } from "@/utils/contentful";
+import mabewhitelogo from "@/assets/images/mabe-logo-white.svg";
+import { getNewFooter } from "@/utils/contentful";
+import { FooterLinkGroup } from "./FooterLinkGroup";
 
 // eslint-disable-next-line import/prefer-default-export
 export async function Footer() {
-	const data = await getGeneralData();
-	const { mabeFacebook, mabeInstagram, mabeLinkedIn } = data.fields;
+	const footerData = await getNewFooter();
+
+	const { linkGroups } = footerData.fields;
+
 	return (
-		<footer className="flex  w-full flex-col items-center space-y-5 bg-gray py-16  text-white">
-			<div className="container grid w-full grid-cols-1 gap-8 px-4">
-				<div className="flex flex-row justify-center md:justify-start">
-					<div className="relative flex h-16 w-64 justify-center">
-						<Image
-							src="/mabe-text.svg"
-							alt="mabe mininmal logo"
-							fill
-							className="size-full"
-						/>
-					</div>
-				</div>
-
-				<ul className="flex flex-row flex-wrap justify-center gap-2 font-ss3 text-lg md:justify-start">
-					<li>
-						<Link href="/blog">Blog</Link>
-					</li>
-					<li>
-						<Link href="/esemenyek">Események</Link>
-					</li>
-					<li>
-						<Link href="/csapatunk">Események</Link>
-					</li>
-					<li>
-						<Link href="/galeria">Galéria</Link>
-					</li>
-					<li>
-						<Link href="/dokumentumok">Dokumentumok</Link>
-					</li>
-					<li>
-						<Link href="/partnerek">Partnerek</Link>
-					</li>
-				</ul>
-
-				<h2 className="text-center font-ss3 text-2xl font-medium md:text-left lg:text-4xl">
-					Ha érdekel a MaBE tevékenysége, és szeretnél részt venni
-					programjainkon,{" "}
-					<Link scroll href="/csatlakozz" className=" text-[#00AB96] underline">
-						csatlakozz
-					</Link>{" "}
-					hozzánk!
-				</h2>
-
-				<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-					<div className="flex flex-col items-center md:items-start">
-						<span className="font-ss3 text-sm font-medium">
-							designed and developed by
-						</span>
-						<a href="https://schdesign.hu" target="_blank" rel="noreferrer">
-							<div className="relative h-8 w-32">
-								<Image src="/schdesign-white.svg" alt="schdesign logo" fill />
+		<>
+			<footer className="w-full bg-[#444] pt-[30px] pb-[40px] sm:pt-[40px] sm:pb-[60px]">
+				<div className="container-mabe">
+					<div className="flex flex-col lg:flex-row justify-between items-center w-full gap-[30px] md:gap-[40px] xl:gap-[60px]">
+						<div className="h-[60px] lg:h-[80px] w-[159px] lg:w-[212px]">
+							<Image
+								src={mabewhitelogo}
+								alt="mabe white text logo"
+								className="size-full"
+							/>
+						</div>
+						{linkGroups && (
+							<div className="flex flex-col md:flex-row w-full md:w-auto px-[10px] md:px-0 gap-[30px] md:gap-[40px] xl:gap-[60px]">
+								{linkGroups.map((linkGroup, index) => (
+									<FooterLinkGroup key={index} footerLinkGroup={linkGroup} />
+								))}
 							</div>
-						</a>
-					</div>
-					<div className="flex flex-row gap-2 text-4xl">
-						<a
-							href={mabeFacebook}
-							aria-label="Facebook link"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FaFacebook />
-						</a>
-						<a
-							href={mabeInstagram}
-							aria-label="Instagram link"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FaInstagram />
-						</a>
-						<a
-							href={mabeLinkedIn}
-							aria-label="Linkedin link"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FaLinkedin />
-						</a>
+						)}
 					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</>
 	);
 }

@@ -55,6 +55,13 @@ module.exports = {
 			aspectRatio: {
 				"4/3": "4/3",
 			},
+			screens: {
+				xs: "0px", // Extra small screens
+				sm: "576px", // Small screens
+				md: "768px", // Medium screens
+				lg: "992px", // Large screens
+				xl: "1200px", // Extra large screens
+			},
 		},
 	},
 	corePlugins: {

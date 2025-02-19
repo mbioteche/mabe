@@ -10,6 +10,24 @@ export type {
 	TypeEventsFields,
 	TypeEventsSkeleton,
 } from "./TypeEvents";
+export { isTypeFooterIconModel } from "./TypeFooterIconModel";
+export type {
+	TypeFooterIconModel,
+	TypeFooterIconModelFields,
+	TypeFooterIconModelSkeleton,
+} from "./TypeFooterIconModel";
+export { isTypeFooterLinkGroup } from "./TypeFooterLinkGroup";
+export type {
+	TypeFooterLinkGroup,
+	TypeFooterLinkGroupFields,
+	TypeFooterLinkGroupSkeleton,
+} from "./TypeFooterLinkGroup";
+export { isTypeFooterTextLinkModel } from "./TypeFooterTextLinkModel";
+export type {
+	TypeFooterTextLinkModel,
+	TypeFooterTextLinkModelFields,
+	TypeFooterTextLinkModelSkeleton,
+} from "./TypeFooterTextLinkModel";
 export { isTypeGalleryAlbum } from "./TypeGalleryAlbum";
 export type {
 	TypeGalleryAlbum,
@@ -34,6 +52,12 @@ export type {
 	TypeMembersFields,
 	TypeMembersSkeleton,
 } from "./TypeMembers";
+export { isTypeNewFooter } from "./TypeNewFooter";
+export type {
+	TypeNewFooter,
+	TypeNewFooterFields,
+	TypeNewFooterSkeleton,
+} from "./TypeNewFooter";
 export { isTypeNews } from "./TypeNews";
 export type { TypeNews, TypeNewsFields, TypeNewsSkeleton } from "./TypeNews";
 export { isTypeNewsAuthor } from "./TypeNewsAuthor";
