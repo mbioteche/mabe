@@ -1,6 +1,7 @@
 import type { Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
+
 import type {
 	TypeFooterIconModelSkeleton,
 	TypeFooterTextLinkModelSkeleton,
@@ -46,11 +47,11 @@ export async function FooterLink({ link }: FooterLinkProps) {
 
 		return (
 			<Link href={link.fields.link ?? ""} className="">
-				<div className="w-[30px] h-[30px] p-[3px]">
+				<div className="size-[30px] p-[3px]">
 					<Image
 						src={iconFile ? `https:${iconFile}` : ""}
-						className="w-[24px] h-[24px]"
-						alt={`Közösségi oldal ikon`}
+						className="size-[24px]"
+						alt="Közösségi oldal ikon"
 						width={24}
 						height={24}
 					/>

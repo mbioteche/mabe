@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import type { Entry } from "contentful";
+
 import type { TypeFooterLinkGroupSkeleton } from "../../@types/generated";
 import { FooterLink } from "./FooterLink";
 
@@ -21,9 +22,9 @@ export async function FooterLinkGroup({
 	const { title, links, textLinks } = fields;
 
 	return (
-		<div className="flex flex-col gap-2 w-full md:w-[180px] lg:w-[200px]">
+		<div className="flex w-full flex-col gap-2 md:w-[180px] lg:w-[200px]">
 			<p className="mabe-h5sb text-[#fafafa]">{title}</p>
-			<div className="w-full bg-[#fafafa] h-[1px]"></div>
+			<div className="h-[1px] w-full bg-[#fafafa]" />
 			<div
 				className={clsx(
 					textLinks
