@@ -3,5 +3,5 @@ export default function AnyPageLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return <div className="container mx-auto px-5 py-12">{children}</div>;
+	return <div className="container-mabe pt-[50px] pb-[40px]">{children}</div>;
 }

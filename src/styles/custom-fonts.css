@@ -110,6 +110,20 @@
 	}
 }
 
+.mabe-h5b {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
+
+@media screen and (min-width: 992px) {
+	.mabe-h5b {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+
 .mabe-h6 {
 	font-size: 14px;
 	line-height: 18px;
