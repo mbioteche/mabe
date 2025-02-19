@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { getEvents } from "@/utils/contentful";
+
 import { EventCard } from "../../components/events/EventCard";
 
 export const metadata: Metadata = {

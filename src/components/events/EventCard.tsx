@@ -16,10 +16,10 @@ export function EventCard({
 	image,
 }: Entry<TypeEventsSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
-		<article className="relative pt-[16px] pl-[16px]">
-			<div className="flex flex-col h-full rounded-[10px] shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
+		<article className="relative pl-[16px] pt-[16px]">
+			<div className="flex h-full flex-col rounded-[10px] shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
 				<div className=" w-full shrink-0  p-[6px]">
-					<div className="w-full relative aspect-video rounded-[4px]">
+					<div className="relative aspect-video w-full rounded-[4px]">
 						<Image
 							src={
 								image?.fields.file
@@ -35,22 +35,22 @@ export function EventCard({
 						/>
 					</div>
 				</div>
-				<div className="flex flex-1 flex-col justify-between px-[14px] pt-[10px] pb-[14px] gap-2">
+				<div className="flex flex-1 flex-col justify-between gap-2 px-[14px] pb-[14px] pt-[10px]">
 					<div>
 						<h2 className="mabe-h4sb mb-[4px]">{title}</h2>
-						<div className="mabe-h5b text-[#00AB96] mb-[16px]">{location}</div>
+						<div className="mabe-h5b mb-[16px] text-[#00AB96]">{location}</div>
 						{miniContent && (
 							<div className="mabe-h5 line-clamp-6">{miniContent}</div>
 						)}
 					</div>
 					<Link
 						href={`/esemenyek/${slug}`}
-						className="flex items-center place-self-end self-end gap-[8px] rounded-[8px] px-[20px] py-[6px] text-[#fff] bg-[#00AB96] shadow-[0_2px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-105"
+						className="flex items-center gap-[8px] place-self-end self-end rounded-[8px] bg-[#00AB96] px-[20px] py-[6px] text-[#fff] shadow-[0_2px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-105"
 					>
 						<span className="mabe-h5sb">További részletek</span>
 						<Image
 							src={arrowRightLogo}
-							className="w-[16px] h-[16px]"
+							className="size-[16px]"
 							height={16}
 							width={16}
 							alt="Tovább olvasom ikon"
@@ -58,9 +58,9 @@ export function EventCard({
 					</Link>
 				</div>
 			</div>
-			<div className="absolute top-0 left-0">
+			<div className="absolute left-0 top-0">
 				{startDate && endDate && (
-					<div className="mabe-h5b text-white bg-[#00AB96] px-[16px] py-[4px] shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
+					<div className="mabe-h5b bg-[#00AB96] px-[16px] py-[4px] text-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
 						{new Date(startDate || "").toLocaleDateString("hu")} -{" "}
 						{new Date(endDate || "").toLocaleDateString("hu")}
 					</div>
