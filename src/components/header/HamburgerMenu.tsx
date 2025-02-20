@@ -21,7 +21,7 @@ export function HamburgerMenu({
 					<HamburgerButton onClick={buttonOnClick} active />
 				</div>
 			</div>
-			<ul className="mt-4 flex h-full w-full flex-col gap-6 font-ss3">
+			<ul className="mt-4 flex size-full flex-col gap-6 font-ss3">
 				<HeaderLinkList onClick={linkOnClick} />
 			</ul>
 		</div>
