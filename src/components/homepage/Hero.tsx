@@ -6,7 +6,7 @@ import mabeLogoSymbol from "@/assets/images/mabe-logo-symbol.svg";
 
 export function Hero({ title, subTitle }: { title: string; subTitle: string }) {
 	return (
-		<div className="container-mabe relative py-[100px] md:py-[120px] lg:py-[180px] mb-[40px] lg:mb-[60px]">
+		<div className="container-mabe relative mb-[40px] py-[100px] md:py-[120px] lg:mb-[60px] lg:py-[180px]">
 			<div className="absolute left-1/2 top-1/2 hidden h-[300px] w-[550px] -translate-x-[690px] -translate-y-1/2 lg:block">
 				<Image src={mabeLogoSymbol} fill alt="MABE logo" />
 			</div>

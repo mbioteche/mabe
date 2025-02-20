@@ -1,4 +1,5 @@
 import type { Entry } from "contentful";
+
 import type { TypeMainPageOurGoalSkeleton } from "../../@types/generated";
 import { OurGoalsCard } from "./OurGoalsCard";
 
@@ -21,10 +22,10 @@ export function OurGoalsSection({
 	}
 
 	return (
-		<div className="container-mabe flex flex-col gap-[30px] mb-[40px] lg:mb-[60px]">
+		<div className="container-mabe mb-[40px] flex flex-col gap-[30px] lg:mb-[60px]">
 			<h3 className="mabe-h3b">{title}</h3>
 
-			<div className="hidden lg:grid grid-cols-2 gap-[30px]">
+			<div className="hidden grid-cols-2 gap-[30px] lg:grid">
 				<div className="flex flex-col gap-[40px]">
 					{getEveryOddElement()
 						.filter((ourGoal) => ourGoal !== undefined)

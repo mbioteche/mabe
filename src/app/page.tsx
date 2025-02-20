@@ -6,6 +6,7 @@ import { LinkIconsSection } from "@/components/homepage/LinkIconsSection";
 import { MiddleSection } from "@/components/homepage/MiddleSection";
 import { PartnersCard } from "@/components/homepage/PartnersCard";
 import { getGeneralData, getMainPage } from "@/utils/contentful";
+
 import { OurGoalsSection } from "../components/homepage/OurGoalsSection";
 
 export default async function MainPage() {
