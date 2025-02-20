@@ -40,6 +40,24 @@ export type {
 	TypeJoinUsButtonFields,
 	TypeJoinUsButtonSkeleton,
 } from "./TypeJoinUsButton";
+export { isTypeMainPage } from "./TypeMainPage";
+export type {
+	TypeMainPage,
+	TypeMainPageFields,
+	TypeMainPageSkeleton,
+} from "./TypeMainPage";
+export { isTypeMainPageEvent } from "./TypeMainPageEvent";
+export type {
+	TypeMainPageEvent,
+	TypeMainPageEventFields,
+	TypeMainPageEventSkeleton,
+} from "./TypeMainPageEvent";
+export { isTypeMainPageOurGoal } from "./TypeMainPageOurGoal";
+export type {
+	TypeMainPageOurGoal,
+	TypeMainPageOurGoalFields,
+	TypeMainPageOurGoalSkeleton,
+} from "./TypeMainPageOurGoal";
 export { isTypeMainPageText } from "./TypeMainPageText";
 export type {
 	TypeMainPageText,

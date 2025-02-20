@@ -17,7 +17,7 @@ export function HeaderLink({ text, href, onClick }: HeaderLinkProps) {
 			<Link
 				href={href}
 				className={clsx(
-					"inline-block w-full text-[18px] font-bold leading-[24px] hover:text-[#00AB96]",
+					"inline-block w-full text-[18px] font-bold leading-[24px] hover:text-[#00AB96] transition-all",
 					pathname === href ? "text-[#00AB96]" : "text-[#222222]",
 				)}
 				onClick={onClick}

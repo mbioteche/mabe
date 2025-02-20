@@ -12,7 +12,7 @@ export function HamburgerMenu({
 	linkOnClick,
 }: HamburgerMenuProps) {
 	return (
-		<div className="fixed top-0 z-50 h-screen w-full bg-white px-[15px] md:px-[32px] ">
+		<div className="fixed top-0 z-50 h-screen w-full bg-white px-[15px] ">
 			<div className="flex h-[60px] justify-between">
 				<div className="flex items-center ">
 					<Logo />
@@ -21,7 +21,7 @@ export function HamburgerMenu({
 					<HamburgerButton onClick={buttonOnClick} active />
 				</div>
 			</div>
-			<ul className="mt-4 flex h-full w-fit flex-col gap-6 font-ss3">
+			<ul className="mt-4 flex h-full w-full flex-col gap-6 font-ss3">
 				<HeaderLinkList onClick={linkOnClick} />
 			</ul>
 		</div>

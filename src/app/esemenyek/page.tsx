@@ -12,7 +12,7 @@ export default async function EventsPage() {
 	const events = await getEvents();
 	return (
 		<>
-			<h1 className="mabe-h3b mb-[30px]">Események</h1>
+			<h1 className="mabe-h3b mb-[20px] md:mb-[30px]">Események</h1>
 			<section className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
 				{events.items
 					.slice(0)

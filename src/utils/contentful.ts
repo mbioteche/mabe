@@ -8,6 +8,7 @@ import type {
 	TypeFooterTextLinkModelSkeleton,
 	TypeGalleryAlbumSkeleton,
 	TypeJoinUsButtonSkeleton,
+	TypeMainPageSkeleton,
 	TypeMembersSkeleton,
 	TypeNewFooterSkeleton,
 	TypeNewsSkeleton,
@@ -144,4 +145,13 @@ export const getNewFooter = async () => {
 	});
 
 	return ftl.items[0] ?? undefined;
+};
+
+export const getMainPage = async () => {
+	const ftl = await client.getEntries<TypeMainPageSkeleton>({
+		content_type: "mainPage",
+		include: 5,
+	});
+
+	return ftl.items[0].fields;
 };

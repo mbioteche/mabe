@@ -1,17 +1,33 @@
-export function Hero() {
+import mabeLogoSectionGreen from "@/assets/images/mabe-logo-section-green.svg";
+import mabeLogoSectionRed from "@/assets/images/mabe-logo-section-red.svg";
+import mabeLogoSymbol from "@/assets/images/mabe-logo-symbol.svg";
+import Image from "next/image";
+
+export function Hero({ title, subTitle }: { title: string; subTitle: string }) {
 	return (
-		<div className="mb-11 sm:mb-22 lg:mb-40">
-			<div
-				id="hero-image"
-				className="h-96 w-full rounded-b-mainPage sm:h-[550px] md:h-[650px]"
-			/>
-			<div className="mx-auto -mt-44 flex max-w-[90%] flex-col items-center justify-center space-y-2 rounded-t-mainPage bg-white px-36 pt-16 text-center text-4xl sm:max-w-[80%] md:pt-10 lg:-mt-48 lg:pt-16 lg:text-5xl">
-				<div className="h-3 w-1/2 max-w-xl border-t-2 border-black lg:mb-11" />
-				<div>
-					<span className="font-extrabold">Magyar Biotechnológus</span>
-					<span className="font-bold">-hallgatók Egyesületének</span>
+		<div className="container-mabe relative py-[100px] md:py-[120px] lg:py-[180px]">
+			<div className="hidden lg:block absolute w-[550px] h-[300px] top-1/2 -translate-y-1/2 left-1/2 -translate-x-[690px]">
+				<Image src={mabeLogoSymbol} fill alt="MABE logo" />
+			</div>
+			<div className="hidden lg:block absolute w-[550px] h-[300px] top-1/2 -translate-y-1/2 right-1/2 translate-x-[690px] rotate-180">
+				<Image src={mabeLogoSymbol} fill alt="MABE logo" />
+			</div>
+
+			<div className="lg:hidden absolute w-full max-w-[calc(100%-20px)] md:max-w-[calc(100%-80px)] top-[20px]  left-1/2 -translate-x-1/2 aspect-[59/13]">
+				<Image src={mabeLogoSectionRed} fill alt="MABE logo" />
+			</div>
+			<div className="lg:hidden absolute w-full max-w-[calc(100%-20px)] md:max-w-[calc(100%-80px)] bottom-[20px] right-1/2 translate-x-1/2 aspect-[59/13]">
+				<Image src={mabeLogoSectionGreen} fill alt="MABE logo" />
+			</div>
+
+			<div className="w-full flex flex-col items-center">
+				<div className="w-fit h-fit  py-[20px] relative flex flex-col gap-[10px]">
+					<div className="absolute h-full w-full top-0 left-0 right-0 bottom-0 bg-[#fafafa] z-10 rounded-[30px] blur-[10px]"></div>
+					<h1 className="mabe-h1 text-center z-20">{title}</h1>
+					<h3 className="mabe-h3 text-center z-20 lg:whitespace-pre-line">
+						{subTitle}
+					</h3>
 				</div>
-				<span>hivatalos weboldala</span>
 			</div>
 		</div>
 	);
