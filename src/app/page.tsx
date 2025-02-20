@@ -6,16 +6,20 @@ import { LinkIconsSection } from "@/components/homepage/LinkIconsSection";
 import { MiddleSection } from "@/components/homepage/MiddleSection";
 import { PartnersCard } from "@/components/homepage/PartnersCard";
 import { getGeneralData, getMainPage } from "@/utils/contentful";
+import { OurGoalsSection } from "../components/homepage/OurGoalsSection";
 
 export default async function MainPage() {
 	const generalData = await getGeneralData();
 	const mainPageData = await getMainPage();
 
-	const { title, subTitle } = mainPageData;
+	const { title, subTitle, ourGouls, ourGoalsTitle } = mainPageData;
 
 	return (
 		<div className="overflow-hidden">
 			<Hero title={title} subTitle={subTitle} />
+
+			<OurGoalsSection title={ourGoalsTitle} ourGoals={ourGouls} />
+
 			<Goals />
 			<PartnersCard />
 			<MiddleSection />

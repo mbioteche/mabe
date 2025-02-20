@@ -34,11 +34,11 @@ export interface TypeMainPageFields {
 	 */
 	ourGoalsTitle: EntryFieldTypes.Symbol;
 	/**
-	 * Field type definition for field 'ourGoals' (ourGoals)
-	 * @name ourGoals
+	 * Field type definition for field 'ourGouls' (ourGouls)
+	 * @name ourGouls
 	 * @localized false
 	 */
-	ourGoals: EntryFieldTypes.Array<
+	ourGouls: EntryFieldTypes.Array<
 		EntryFieldTypes.EntryLink<TypeMainPageOurGoalSkeleton>
 	>;
 	/**

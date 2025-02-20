@@ -150,7 +150,7 @@ export const getNewFooter = async () => {
 export const getMainPage = async () => {
 	const ftl = await client.getEntries<TypeMainPageSkeleton>({
 		content_type: "mainPage",
-		include: 5,
+		include: 10,
 	});
 
 	return ftl.items[0].fields;

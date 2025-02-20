@@ -14,17 +14,17 @@ import type {
  */
 export interface TypeMainPageOurGoalFields {
 	/**
-	 * Field type definition for field 'icon' (icon)
-	 * @name icon
+	 * Field type definition for field 'title' (title)
+	 * @name title
 	 * @localized false
 	 */
-	icon: EntryFieldTypes.AssetLink;
+	title: EntryFieldTypes.Symbol;
 	/**
 	 * Field type definition for field 'image' (image)
 	 * @name image
 	 * @localized false
 	 */
-	image?: EntryFieldTypes.Text;
+	image?: EntryFieldTypes.AssetLink;
 }
 
 /**
