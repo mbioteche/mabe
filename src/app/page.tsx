@@ -1,13 +1,8 @@
-import { BottomSection } from "@/components/homepage/BottomSection";
-import { Goals } from "@/components/homepage/Goals";
 import { Hero } from "@/components/homepage/Hero";
-import { JoinCard } from "@/components/homepage/JoinCard";
-import { LinkIconsSection } from "@/components/homepage/LinkIconsSection";
-import { MiddleSection } from "@/components/homepage/MiddleSection";
-import { PartnersCard } from "@/components/homepage/PartnersCard";
 import { getGeneralData, getMainPage } from "@/utils/contentful";
 
 import { JoinUsSection } from "../components/homepage/JoinUsSection";
+import { MainPageEventsSection } from "../components/homepage/MainPageEventsSection";
 import { OurGoalsSection } from "../components/homepage/OurGoalsSection";
 
 export default async function MainPage() {
@@ -16,8 +11,16 @@ export default async function MainPage() {
 
 	const { mabeformLink } = generalData.fields;
 
-	const { title, subTitle, ourGouls, ourGoalsTitle, joinUsText, joinUsButton } =
-		mainPageData;
+	const {
+		title,
+		subTitle,
+		ourGouls,
+		ourGoalsTitle,
+		joinUsText,
+		joinUsButton,
+		incomingEventsTitle,
+		incomingEvents,
+	} = mainPageData;
 
 	return (
 		<div className="overflow-hidden">
@@ -28,8 +31,12 @@ export default async function MainPage() {
 				buttonLabel={joinUsButton}
 				link={mabeformLink}
 			/>
+			<MainPageEventsSection
+				title={incomingEventsTitle}
+				events={incomingEvents}
+			/>
 
-			<Goals />
+			{/* <Goals />
 			<PartnersCard />
 			<MiddleSection />
 			<BottomSection />
@@ -38,7 +45,7 @@ export default async function MainPage() {
 				joinLink={
 					generalData.fields.mabeformLink || "https://mbioteche.hu/hamarosan"
 				}
-			/>
+			/> */}
 		</div>
 	);
 }

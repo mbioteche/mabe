@@ -164,3 +164,10 @@
 		line-height: 22px;
 	}
 }
+
+.main-page-event-card-font {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 700;
+	letter-spacing: 0;
+}
