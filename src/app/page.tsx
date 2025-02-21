@@ -32,13 +32,12 @@ export default async function MainPage() {
 					threeDaysBefore.setDate(new Date().getDate() - 3);
 					const eventDate = new Date(startDate);
 					return eventDate >= threeDaysBefore;
-				} 
-					// end date should be later than the current date - 3 days
-					const threeDaysBefore = new Date();
-					threeDaysBefore.setDate(new Date().getDate() - 3);
-					const eventDate = new Date(endDate);
-					return eventDate >= threeDaysBefore;
-				
+				}
+				// end date should be later than the current date - 3 days
+				const threeDaysBefore = new Date();
+				threeDaysBefore.setDate(new Date().getDate() - 3);
+				const eventDate = new Date(endDate);
+				return eventDate >= threeDaysBefore;
 			}
 			return false;
 		})
