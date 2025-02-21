@@ -19,7 +19,7 @@ export function MainPageEventCard({
 	string
 >["fields"]) {
 	return (
-		<article className="main-page-events-card h-full relative pl-[15px] pt-[15px]">
+		<article className="main-page-events-card relative h-full pl-[15px] pt-[15px]">
 			<div className="flex h-full flex-col rounded-[10px] shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
 				<div className=" w-full shrink-0  p-[6px]">
 					<div className="relative aspect-video w-full rounded-[4px]">

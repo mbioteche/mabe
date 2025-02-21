@@ -38,11 +38,11 @@ export function MainPageEventsSection({
 	return (
 		<div className="container-mabe mb-[40px] flex flex-col gap-[30px] lg:mb-[60px]">
 			<h3 className="mabe-h3b">{title}</h3>
-			<div className="flex flex-row overflow-x-auto snap-scroll-container">
+			<div className="snap-scroll-container flex flex-row overflow-x-auto">
 				{events
 					.filter((event) => event !== undefined)
 					.map((event, index) => (
-						<div className="snap-scroll-item basis-[100%] md:basis-1/2 xl:basis-1/3 shrink-0 grow-0 px-[15px]">
+						<div className="snap-scroll-item shrink-0 grow-0 basis-[100%] px-[15px] md:basis-1/2 xl:basis-1/3">
 							<MainPageEventCard
 								key={(event?.sys.id ?? "") + index}
 								{...event?.fields}
