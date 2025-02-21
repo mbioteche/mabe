@@ -27,18 +27,18 @@ export default async function MainPage() {
 			if (event && event.fields) {
 				const { startDate, endDate } = event.fields;
 				if (endDate === undefined) {
-					//start date should be later than the current date - 3 days
+					// start date should be later than the current date - 3 days
 					const threeDaysBefore = new Date();
 					threeDaysBefore.setDate(new Date().getDate() - 3);
 					const eventDate = new Date(startDate);
 					return eventDate >= threeDaysBefore;
-				} else {
-					//end date should be later than the current date - 3 days
+				} 
+					// end date should be later than the current date - 3 days
 					const threeDaysBefore = new Date();
 					threeDaysBefore.setDate(new Date().getDate() - 3);
 					const eventDate = new Date(endDate);
 					return eventDate >= threeDaysBefore;
-				}
+				
 			}
 			return false;
 		})
