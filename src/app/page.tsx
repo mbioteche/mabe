@@ -22,6 +22,38 @@ export default async function MainPage() {
 		incomingEvents,
 	} = mainPageData;
 
+	const filteredIncomingEvents = incomingEvents
+		.filter((event) => {
+			if (event && event.fields) {
+				const { startDate, endDate } = event.fields;
+				if (endDate === undefined) {
+					//start date should be later than the current date - 3 days
+					const threeDaysBefore = new Date();
+					threeDaysBefore.setDate(new Date().getDate() - 3);
+					const eventDate = new Date(startDate);
+					return eventDate >= threeDaysBefore;
+				} else {
+					//end date should be later than the current date - 3 days
+					const threeDaysBefore = new Date();
+					threeDaysBefore.setDate(new Date().getDate() - 3);
+					const eventDate = new Date(endDate);
+					return eventDate >= threeDaysBefore;
+				}
+			}
+			return false;
+		})
+		.sort((a, b) => {
+			if (a === undefined || b === undefined) {
+				return -1;
+			}
+			if (a.fields.startDate && b.fields.startDate) {
+				const dateA = new Date(a.fields.startDate);
+				const dateB = new Date(b.fields.startDate);
+				return dateA.getTime() - dateB.getTime();
+			}
+			return 0;
+		});
+
 	return (
 		<div className="overflow-hidden">
 			<Hero title={title} subTitle={subTitle} />
@@ -33,7 +65,7 @@ export default async function MainPage() {
 			/>
 			<MainPageEventsSection
 				title={incomingEventsTitle}
-				events={incomingEvents}
+				events={filteredIncomingEvents}
 			/>
 
 			{/* <Goals />
