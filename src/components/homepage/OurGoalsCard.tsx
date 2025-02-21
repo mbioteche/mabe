@@ -13,7 +13,7 @@ export function OurGoalsCard({
 	string
 >["fields"]) {
 	return (
-		<article className="relative pl-[16px] pt-[16px] our-goals-card">
+		<article className="our-goals-card relative pl-[16px] pt-[16px]">
 			<div className="relative aspect-[9/5] w-full  shadow-[0px_2px_4px_rgba(0,0,0,0.25)]">
 				<Image
 					src={
