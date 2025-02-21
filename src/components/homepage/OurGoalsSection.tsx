@@ -1,3 +1,5 @@
+"use client";
+
 import type { Entry } from "contentful";
 
 import type { TypeMainPageOurGoalSkeleton } from "../../@types/generated";
@@ -13,6 +15,26 @@ export function OurGoalsSection({
 		| undefined
 	)[];
 }) {
+	if (typeof document !== "undefined") {
+		const cards = document.querySelectorAll(".our-goals-card");
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const tempEntry = entry;
+					if (tempEntry.isIntersecting) {
+						(tempEntry.target as any).style.animation =
+							"appear 0.5s linear forwards";
+					} else {
+						(tempEntry.target as any).style.animation = "none";
+					}
+				});
+			},
+			{ threshold: 0.2 },
+		);
+		cards.forEach((card) => observer.observe(card));
+	}
+
 	function getEveryOddElement() {
 		return ourGoals.filter((_, i) => i % 2 === 1);
 	}
@@ -29,15 +51,21 @@ export function OurGoalsSection({
 				<div className="flex flex-col gap-[40px]">
 					{getEveryOddElement()
 						.filter((ourGoal) => ourGoal !== undefined)
-						.map((ourGoal) => (
-							<OurGoalsCard key={ourGoal?.sys.id} {...ourGoal?.fields} />
+						.map((ourGoal, index) => (
+							<OurGoalsCard
+								key={(ourGoal?.sys.id ?? "") + index}
+								{...ourGoal?.fields}
+							/>
 						))}
 				</div>
 				<div className="flex flex-col gap-[40px] pt-[80px]">
 					{getEveryEvenElement()
 						.filter((ourGoal) => ourGoal !== undefined)
-						.map((ourGoal) => (
-							<OurGoalsCard key={ourGoal?.sys.id} {...ourGoal?.fields} />
+						.map((ourGoal, index) => (
+							<OurGoalsCard
+								key={(ourGoal?.sys.id ?? "") + index}
+								{...ourGoal?.fields}
+							/>
 						))}
 				</div>
 			</div>
@@ -45,8 +73,11 @@ export function OurGoalsSection({
 				<div className="flex flex-col gap-[40px]">
 					{ourGoals
 						.filter((ourGoal) => ourGoal !== undefined)
-						.map((ourGoal) => (
-							<OurGoalsCard key={ourGoal?.sys.id} {...ourGoal?.fields} />
+						.map((ourGoal, index) => (
+							<OurGoalsCard
+								key={(ourGoal?.sys.id ?? "") + index}
+								{...ourGoal?.fields}
+							/>
 						))}
 				</div>
 			</div>

@@ -7,19 +7,27 @@ import { MiddleSection } from "@/components/homepage/MiddleSection";
 import { PartnersCard } from "@/components/homepage/PartnersCard";
 import { getGeneralData, getMainPage } from "@/utils/contentful";
 
+import { JoinUsSection } from "../components/homepage/JoinUsSection";
 import { OurGoalsSection } from "../components/homepage/OurGoalsSection";
 
 export default async function MainPage() {
 	const generalData = await getGeneralData();
 	const mainPageData = await getMainPage();
 
-	const { title, subTitle, ourGouls, ourGoalsTitle } = mainPageData;
+	const { mabeformLink } = generalData.fields;
+
+	const { title, subTitle, ourGouls, ourGoalsTitle, joinUsText, joinUsButton } =
+		mainPageData;
 
 	return (
 		<div className="overflow-hidden">
 			<Hero title={title} subTitle={subTitle} />
-
 			<OurGoalsSection title={ourGoalsTitle} ourGoals={ourGouls} />
+			<JoinUsSection
+				title={joinUsText}
+				buttonLabel={joinUsButton}
+				link={mabeformLink}
+			/>
 
 			<Goals />
 			<PartnersCard />
