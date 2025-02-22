@@ -2,11 +2,11 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import clsx from "clsx";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import arrowRightLogo from "@/assets/images/arrow_right.svg";
 import { getEvent, getEvents } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
-import Link from "next/link";
 
 type Props = {
 	params: { slug: string };
@@ -59,24 +59,24 @@ export default async function EventsPage({ params }: Props) {
 					alt={title}
 				/>
 			</div>
-			<div className="mt-[30px] lg:mt-[40px] flex flex-col pb-6">
+			<div className="mt-[30px] flex flex-col pb-6 lg:mt-[40px]">
 				<div className="mb-5 flex flex-col md:flex-row md:items-center md:justify-between lg:flex-col lg:items-start 2xl:flex-row 2xl:items-center 2xl:justify-between">
-					<h2 className="mb-3 mabe-h1 md:mb-0 lg:mb-3 xl:mb-0">{title}</h2>
+					<h2 className="mabe-h1 mb-3 md:mb-0 lg:mb-3 xl:mb-0">{title}</h2>
 					{startDate && endDate && (
-						<div className="min-w-[30%] mabe-h2  font-normal ">
+						<div className="mabe-h2 min-w-[30%]  font-normal ">
 							{new Date(startDate).toLocaleDateString("hu")} -{" "}
 							{new Date(endDate).toLocaleDateString("hu")}
 						</div>
 					)}
 				</div>
-				<div className="mb-10 mabe-h2 font-bold text-[#00AB96] ">
+				<div className="mabe-h2 mb-10 font-bold text-[#00AB96] ">
 					{location}
 				</div>
-				<div className="prose mb-10 max-w-none lg:prose-xl leading-[24px]">
+				<div className="prose mb-10 max-w-none leading-[24px] lg:prose-xl">
 					{documentToReactComponents(longContent, renderOptions)}
 				</div>
 				<Link
-					href={`/esemenyek`}
+					href="/esemenyek"
 					className="flex items-center gap-[8px] self-start rounded-[8px] bg-[#00AB96] px-[20px] py-[6px] text-[#fff] shadow-[0_2px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-105"
 				>
 					<Image
