@@ -9,9 +9,8 @@ export function EventIframe({ iframeUrl }: { iframeUrl?: string }) {
 					src={iframeUrl}
 					width="100%"
 					className="mb-[30px] h-[85vh]"
-				 />
+				/>
 			</div>
 		);
 	}
-	
 }
