@@ -7,6 +7,7 @@ import Link from "next/link";
 import arrowRightLogo from "@/assets/images/arrow_right.svg";
 import { getEvent, getEvents } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
+import { EventIframe } from "../../../components/events/EventIframe";
 
 type Props = {
 	params: { slug: string };
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EventsPage({ params }: Props) {
 	const event = await getEvent(params.slug);
-	const { image, location, longContent, title, endDate, startDate } =
+	const { image, location, longContent, title, endDate, startDate, iframeUrl } =
 		event.fields;
 	return (
 		<article className="event-details-page">
@@ -72,6 +73,9 @@ export default async function EventsPage({ params }: Props) {
 				<div className="mabe-h2 mb-10 font-bold text-[#00AB96] ">
 					{location}
 				</div>
+
+				<EventIframe iframeUrl={iframeUrl} />
+
 				<div className="prose mb-10 max-w-none leading-[24px] lg:prose-xl">
 					{documentToReactComponents(longContent, renderOptions)}
 				</div>
