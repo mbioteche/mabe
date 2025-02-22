@@ -3,9 +3,10 @@ import clsx from "clsx";
 import type { Metadata } from "next";
 import Image from "next/image";
 
-import { BackButton } from "@/components/buttons/BackButton";
+import arrowRightLogo from "@/assets/images/arrow_right.svg";
 import { getEvent, getEvents } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
+import Link from "next/link";
 
 type Props = {
 	params: { slug: string };
@@ -49,7 +50,7 @@ export default async function EventsPage({ params }: Props) {
 	const { image, location, longContent, title, endDate, startDate } =
 		event.fields;
 	return (
-		<article>
+		<article className="event-details-page">
 			<div className="relative aspect-video w-full">
 				<Image
 					src={image ? `https:${image?.fields?.file?.url}` : "/missing_img.png"}
@@ -58,25 +59,35 @@ export default async function EventsPage({ params }: Props) {
 					alt={title}
 				/>
 			</div>
-			<div className="mt-14 flex flex-col pb-6">
+			<div className="mt-[30px] lg:mt-[40px] flex flex-col pb-6">
 				<div className="mb-5 flex flex-col md:flex-row md:items-center md:justify-between lg:flex-col lg:items-start 2xl:flex-row 2xl:items-center 2xl:justify-between">
-					<h2 className="mb-3 text-4xl font-medium md:mb-0 lg:mb-3 lg:text-6xl xl:mb-0">
-						{title}
-					</h2>
+					<h2 className="mb-3 mabe-h1 md:mb-0 lg:mb-3 xl:mb-0">{title}</h2>
 					{startDate && endDate && (
-						<div className="min-w-[30%] text-2xl font-normal xl:text-3xl">
+						<div className="min-w-[30%] mabe-h2  font-normal ">
 							{new Date(startDate).toLocaleDateString("hu")} -{" "}
 							{new Date(endDate).toLocaleDateString("hu")}
 						</div>
 					)}
 				</div>
-				<div className="mb-10 text-2xl font-bold text-[#00AB96] lg:text-4xl">
+				<div className="mb-10 mabe-h2 font-bold text-[#00AB96] ">
 					{location}
 				</div>
-				<div className="prose mb-10 max-w-none lg:prose-xl">
+				<div className="prose mb-10 max-w-none lg:prose-xl leading-[24px]">
 					{documentToReactComponents(longContent, renderOptions)}
 				</div>
-				<BackButton href="/esemenyek" />
+				<Link
+					href={`/esemenyek`}
+					className="flex items-center gap-[8px] self-start rounded-[8px] bg-[#00AB96] px-[20px] py-[6px] text-[#fff] shadow-[0_2px_4px_rgba(0,0,0,0.25)] transition-transform duration-300 hover:scale-105"
+				>
+					<Image
+						src={arrowRightLogo}
+						className="size-[16px] rotate-180"
+						height={16}
+						width={16}
+						alt="Tovább olvasom ikon"
+					/>
+					<span className="mabe-h5sb">Vissza</span>
+				</Link>
 			</div>
 		</article>
 	);
