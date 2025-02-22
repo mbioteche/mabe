@@ -8,10 +8,10 @@ export function EventIframe({ iframeUrl }: { iframeUrl?: string }) {
 					title="Event iframe"
 					src={iframeUrl}
 					width="100%"
-					className="h-[85vh] mb-[30px]"
-				></iframe>
+					className="mb-[30px] h-[85vh]"
+				 />
 			</div>
 		);
 	}
-	return;
+	
 }

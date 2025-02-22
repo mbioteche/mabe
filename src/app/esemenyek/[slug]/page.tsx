@@ -7,6 +7,7 @@ import Link from "next/link";
 import arrowRightLogo from "@/assets/images/arrow_right.svg";
 import { getEvent, getEvents } from "@/utils/contentful";
 import { renderOptions } from "@/utils/RenderOptions";
+
 import { EventIframe } from "../../../components/events/EventIframe";
 
 type Props = {
