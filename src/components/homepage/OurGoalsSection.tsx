@@ -2,6 +2,7 @@
 
 import type { Entry } from "contentful";
 
+import { useEffect } from "react";
 import type { TypeMainPageOurGoalSkeleton } from "../../@types/generated";
 import { OurGoalsCard } from "./OurGoalsCard";
 
@@ -15,25 +16,39 @@ export function OurGoalsSection({
 		| undefined
 	)[];
 }) {
-	if (typeof document !== "undefined") {
-		const cards = document.querySelectorAll(".our-goals-card");
+	let observer: IntersectionObserver;
 
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					const tempEntry = entry;
-					if (tempEntry.isIntersecting) {
-						(tempEntry.target as any).style.animation =
-							"appear 0.5s linear forwards";
-					} else {
-						(tempEntry.target as any).style.animation = "none";
-					}
-				});
-			},
-			{ threshold: 0.2 },
-		);
-		cards.forEach((card) => observer.observe(card));
+	function applyObserver() {
+		if (typeof document !== "undefined") {
+			const cards = document.querySelectorAll(".our-goals-card");
+
+			observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						const tempEntry = entry;
+						if (tempEntry.isIntersecting) {
+							(tempEntry.target as any).style.animation =
+								"appear 0.5s linear forwards";
+						} else {
+							(tempEntry.target as any).style.animation = "none";
+						}
+					});
+				},
+				{ threshold: 0.2 },
+			);
+			cards.forEach((card) => observer.observe(card));
+		}
 	}
+
+	useEffect(() => {
+		applyObserver();
+
+		return () => {
+			if (observer) {
+				observer.disconnect();
+			}
+		};
+	}, []);
 
 	function getEveryOddElement() {
 		return ourGoals.filter((_, i) => i % 2 === 1);
