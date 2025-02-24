@@ -50,6 +50,10 @@ export function MainPageEventsSection({
 		};
 	}, []);
 
+	if (events.length === 0) {
+		return null;
+	}
+
 	return (
 		<div className="container-mabe mb-[40px] flex flex-col gap-[30px] lg:mb-[60px]">
 			<h3 className="mabe-h3b">{title}</h3>

@@ -64,7 +64,7 @@ export function OurGoalsSection({
 
 			<div className="hidden grid-cols-2 gap-[30px] lg:grid">
 				<div className="flex flex-col gap-[40px]">
-					{getEveryOddElement()
+					{getEveryEvenElement()
 						.filter((ourGoal) => ourGoal !== undefined)
 						.map((ourGoal, index) => (
 							<OurGoalsCard
@@ -74,7 +74,7 @@ export function OurGoalsSection({
 						))}
 				</div>
 				<div className="flex flex-col gap-[40px] pt-[80px]">
-					{getEveryEvenElement()
+					{getEveryOddElement()
 						.filter((ourGoal) => ourGoal !== undefined)
 						.map((ourGoal, index) => (
 							<OurGoalsCard
