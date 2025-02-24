@@ -1,8 +1,8 @@
 "use client";
 
 import type { Entry } from "contentful";
-
 import { useEffect } from "react";
+
 import type { TypeMainPageOurGoalSkeleton } from "../../@types/generated";
 import { OurGoalsCard } from "./OurGoalsCard";
 

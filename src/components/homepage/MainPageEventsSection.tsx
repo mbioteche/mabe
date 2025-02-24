@@ -1,8 +1,8 @@
 "use client";
 
 import type { Entry } from "contentful";
-
 import { useEffect } from "react";
+
 import type { TypeMainPageEventSkeleton } from "../../@types/generated";
 import { MainPageEventCard } from "../events/MainPageEventCard";
 
