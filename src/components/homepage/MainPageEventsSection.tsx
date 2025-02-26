@@ -65,10 +65,14 @@ export function MainPageEventsSection({
 							className="snap-scroll-item shrink-0 grow-0 basis-[100%] px-[15px] md:basis-1/2 xl:basis-1/3"
 							key={(event?.sys.id ?? "") + index}
 						>
-							<MainPageEventCard {...event?.fields} />
+							<MainPageEventCard {...event.fields} />
 						</div>
 					))}
 			</div>
 		</div>
 	);
 }
+
+/* Type error: Type 
+'{ title?: string | undefined; location?: string | undefined; image?: Asset<"WITHOUT_UNRESOLVABLE_LINKS", string> | undefined; startDate?: `${number}-${number}-${number}T${number}:${number}:${number}Z` | undefined; endDate?: `${number}-${number}-${number}T${number}:${number}:${number}Z` | undefined; link?: string | u...'
+'{ title: string; location: string; image: Asset<"WITHOUT_UNRESOLVABLE_LINKS", string> | undefined; startDate: `${number}-${number}-${number}T${number}:${number}:${number}Z`; endDate?: `${number}-${number}-${number}T${number}:${number}:${number}Z` | undefined; link: string; }'. */
