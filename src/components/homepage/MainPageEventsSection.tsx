@@ -65,7 +65,7 @@ export function MainPageEventsSection({
 							className="snap-scroll-item shrink-0 grow-0 basis-[100%] px-[15px] md:basis-1/2 xl:basis-1/3"
 							key={(event?.sys.id ?? "") + index}
 						>
-							<MainPageEventCard {...event.fields} />
+							{event && <MainPageEventCard {...event.fields} />}
 						</div>
 					))}
 			</div>
