@@ -55,16 +55,16 @@ export default async function MainPage() {
 
 	return (
 		<div className="overflow-hidden">
-			<Hero title={title} subTitle={subTitle} />
-			<OurGoalsSection title={ourGoalsTitle} ourGoals={ourGouls} />
+			<Hero title={title ?? ""} subTitle={subTitle ?? ""} />
+			<OurGoalsSection title={ourGoalsTitle ?? ""} ourGoals={ourGouls ?? []} />
 			<JoinUsSection
-				title={joinUsText}
-				buttonLabel={joinUsButton}
-				link={mabeformLink}
+				title={joinUsText ?? ""}
+				buttonLabel={joinUsButton ?? ""}
+				link={mabeformLink ?? ""}
 			/>
 			<MainPageEventsSection
-				title={incomingEventsTitle}
-				events={filteredIncomingEvents}
+				title={incomingEventsTitle ?? ""}
+				events={filteredIncomingEvents ?? []}
 			/>
 
 			{/* <Goals />
