@@ -88,12 +88,17 @@ export function OurGoalsSection({
 				<div className="flex flex-col gap-[40px]">
 					{ourGoals
 						.filter((ourGoal) => ourGoal !== undefined)
-						.map((ourGoal, index) => (
-							<OurGoalsCard
-								key={(ourGoal?.sys.id ?? "") + index}
-								{...ourGoal?.fields}
-							/>
-						))}
+						.map((ourGoal, index) => {
+							if (ourGoal === undefined) {
+								return null;
+							}
+							return (
+								<OurGoalsCard
+									key={(ourGoal ? ourGoal.sys.id : "") + index}
+									{...ourGoal.fields}
+								/>
+							);
+						})}
 				</div>
 			</div>
 		</div>
