@@ -67,20 +67,18 @@ export function OurGoalsSection({
 					{getEveryEvenElement()
 						.filter((ourGoal) => ourGoal !== undefined)
 						.map((ourGoal, index) => (
-							<OurGoalsCard
-								key={(ourGoal?.sys.id ?? "") + index}
-								{...ourGoal?.fields}
-							/>
+							<div key={(ourGoal ? ourGoal.sys.id : "") + index}>
+								{ourGoal && <OurGoalsCard {...ourGoal.fields} />}
+							</div>
 						))}
 				</div>
 				<div className="flex flex-col gap-[40px] pt-[80px]">
 					{getEveryOddElement()
 						.filter((ourGoal) => ourGoal !== undefined)
 						.map((ourGoal, index) => (
-							<OurGoalsCard
-								key={(ourGoal?.sys.id ?? "") + index}
-								{...ourGoal?.fields}
-							/>
+							<div key={(ourGoal ? ourGoal.sys.id : "") + index}>
+								{ourGoal && <OurGoalsCard {...ourGoal.fields} />}
+							</div>
 						))}
 				</div>
 			</div>
