@@ -1,0 +1,38 @@
+@keyframes appear {
+	from {
+		opacity: 0;
+		scale: 0.4;
+	}
+	to {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+.our-goals-card {
+	opacity: 0; /* Start hidden */
+}
+
+.main-page-events-card {
+	opacity: 0; /* Start hidden */
+}
+
+.snap-scroll-container {
+	width: 100%;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+}
+
+.snap-scroll-container .snap-scroll-content {
+	display: flex;
+}
+
+.snap-scroll-container .snap-scroll-item {
+	scroll-snap-align: start;
+	box-sizing: border-box;
+	padding: 16px 10px;
+}
+
+.event-details-page .prose a {
+	color: #00ab96;
+}

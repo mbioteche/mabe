@@ -3,9 +3,14 @@ import { createClient } from "contentful";
 import type {
 	TypeDocumentsSkeleton,
 	TypeEventsSkeleton,
+	TypeFooterIconModelSkeleton,
+	TypeFooterLinkGroupSkeleton,
+	TypeFooterTextLinkModelSkeleton,
 	TypeGalleryAlbumSkeleton,
 	TypeJoinUsButtonSkeleton,
+	TypeMainPageSkeleton,
 	TypeMembersSkeleton,
+	TypeNewFooterSkeleton,
 	TypeNewsSkeleton,
 	TypePartnersSkeleton,
 } from "@/@types/generated";
@@ -110,4 +115,43 @@ export const getGeneralData = async () => {
 		content_type: "joinUsButton",
 	});
 	return gd.items[0];
+};
+
+export const getFooterTextLinkModels = async () => {
+	const ftl = await client.getEntries<TypeFooterTextLinkModelSkeleton>({
+		content_type: "footerTextLinkModel",
+	});
+	return ftl;
+};
+
+export const getFooterIconModels = async () => {
+	const ftl = await client.getEntries<TypeFooterIconModelSkeleton>({
+		content_type: "footerIconModel",
+	});
+	return ftl;
+};
+
+export const getFooterLinkGroups = async () => {
+	const ftl = await client.getEntries<TypeFooterLinkGroupSkeleton>({
+		content_type: "footerLinkGroup",
+	});
+	return ftl;
+};
+
+export const getNewFooter = async () => {
+	const ftl = await client.getEntries<TypeNewFooterSkeleton>({
+		content_type: "newFooter",
+		include: 5,
+	});
+
+	return ftl.items[0] ?? undefined;
+};
+
+export const getMainPage = async () => {
+	const ftl = await client.getEntries<TypeMainPageSkeleton>({
+		content_type: "mainPage",
+		include: 10,
+	});
+
+	return ftl.items[0].fields;
 };

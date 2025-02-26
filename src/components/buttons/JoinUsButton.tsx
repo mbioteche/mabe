@@ -9,7 +9,7 @@ export function JoinUsButton({ joinLink }: JoinUsButtonProps) {
 				<div className="pl-1 pr-6 pt-1">
 					<p>Csatlakozz!</p>
 				</div>
-				<div className="flex w-8 items-center justify-center bg-turquoise-dark">
+				<div className="flex w-8 items-center justify-center bg-[#00AB96]">
 					<span>+</span>
 				</div>
 			</div>

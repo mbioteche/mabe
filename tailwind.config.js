@@ -41,8 +41,7 @@ module.exports = {
 				newsImage: "492px",
 			},
 			fontFamily: {
-				roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
-				"roboto-slab": ["Roboto Slab", ...defaultTheme.fontFamily.serif],
+				ss3: ["Source Sans 3", ...defaultTheme.fontFamily.sans],
 			},
 			typography: (theme) => ({
 				DEFAULT: {
@@ -55,6 +54,13 @@ module.exports = {
 			}),
 			aspectRatio: {
 				"4/3": "4/3",
+			},
+			screens: {
+				xs: "0px", // Extra small screens
+				sm: "576px", // Small screens
+				md: "768px", // Medium screens
+				lg: "992px", // Large screens
+				xl: "1200px", // Extra large screens
 			},
 		},
 	},

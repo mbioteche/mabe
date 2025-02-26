@@ -91,9 +91,7 @@ export default async function SelectedNewsPage({
 				/>
 			</div>
 			<div className="flex flex-col">
-				<h1 className="my-8 font-roboto-slab text-xl font-bold xl:text-3xl">
-					{title}
-				</h1>
+				<h1 className="my-8 font-ss3 text-xl font-bold xl:text-3xl">{title}</h1>
 				<div className="prose mx-auto mb-10 lg:prose-xl">
 					{documentToReactComponents(content, renderOptions)}
 				</div>

@@ -16,7 +16,7 @@ export function Goals() {
 				/>
 			</div>
 			<div className="max-w-3xl flex-1">
-				<h3 className="mb-11 font-roboto-slab text-3xl font-medium uppercase md:text-4xl lg:text-5xl">
+				<h3 className="mb-11 font-ss3 text-3xl font-medium uppercase md:text-4xl lg:text-5xl">
 					egyesület célja
 				</h3>
 				<p className="text-2xl xl:font-semibold">

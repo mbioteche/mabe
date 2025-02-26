@@ -13,7 +13,7 @@ export function MemberCard({
 }: Entry<TypeMembersSkeleton, "WITHOUT_UNRESOLVABLE_LINKS", string>["fields"]) {
 	return (
 		<div className="flex w-full flex-row items-center space-x-3 rounded-2xl shadow-memberCard">
-			<div className="relative size-28 shrink-0 border-r-4 border-turquoise-dark xl:size-36 2xl:size-48">
+			<div className="relative size-28 shrink-0 border-r-4 border-[#00AB96] xl:size-36 2xl:size-48">
 				<Image
 					src={
 						image?.fields?.file

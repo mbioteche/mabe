@@ -42,7 +42,10 @@
 		"jsx-a11y/anchor-is-valid": "off", // Doesn't play well with Next `<Link>`
 		"prefer-exponentiation-operator": "error", // Auto-fix for an inherited rule
 		"react/react-in-jsx-scope": "off", // React is always in scope with Next
-		"react/require-default-props": "off" // React `defaultProps` are deprecated
+		"react/require-default-props": "off", // React `defaultProps` are deprecated
+		"react/no-array-index-key": "off",
+		"@typescript-eslint/no-explicit-any": "off", // Allow `any` for quick prototyping
+		"tailwindcss/enforces-negative-arbitrary-values": "off"
 	},
 	"overrides": [
 		{

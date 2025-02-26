@@ -17,7 +17,7 @@ export function PartnersCard() {
 						/>
 					</div>
 					<div className="w-auto">
-						<h3 className="text-center font-roboto-slab text-2xl font-medium uppercase hover:text-turquoise-dark lg:text-left lg:text-3xl">
+						<h3 className="text-center font-ss3 text-2xl font-medium uppercase hover:text-[#00AB96] lg:text-left lg:text-3xl">
 							Partnerekkel való megismerkedés
 						</h3>
 					</div>

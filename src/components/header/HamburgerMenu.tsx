@@ -1,18 +1,28 @@
 import { HamburgerButton } from "@/components/header/HamburgerButton";
 import { HeaderLinkList } from "@/components/header/HeaderLinkList";
+import { Logo } from "@/components/header/Logo";
 
 type HamburgerMenuProps = {
-	buttonOnClick: React.MouseEventHandler<SVGSVGElement>;
+	buttonOnClick: React.MouseEventHandler<HTMLElement>;
+	linkOnClick: React.MouseEventHandler<HTMLElement>;
 };
-
-export function HamburgerMenu({ buttonOnClick }: HamburgerMenuProps) {
+// eslint-disable-next-line import/prefer-default-export
+export function HamburgerMenu({
+	buttonOnClick,
+	linkOnClick,
+}: HamburgerMenuProps) {
 	return (
-		<div className="fixed top-0 z-50 h-screen w-full bg-white py-4 pl-16">
-			<ul className="flex h-full flex-col justify-evenly font-roboto-slab">
-				<li>
+		<div className="fixed top-0 z-50 h-screen w-full bg-white px-[15px] ">
+			<div className="flex h-[60px] justify-between">
+				<div className="flex items-center ">
+					<Logo />
+				</div>
+				<div className="flex items-center lg:hidden">
 					<HamburgerButton onClick={buttonOnClick} active />
-				</li>
-				<HeaderLinkList />
+				</div>
+			</div>
+			<ul className="mt-4 flex size-full flex-col gap-6 font-ss3">
+				<HeaderLinkList onClick={linkOnClick} />
 			</ul>
 		</div>
 	);

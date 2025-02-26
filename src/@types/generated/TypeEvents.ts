@@ -61,6 +61,13 @@ export interface TypeEventsFields {
 	 * @localized false
 	 */
 	slug: EntryFieldTypes.Symbol;
+
+	/**
+	 * Field type definition for field 'iframeUrl' (iframeUrl)
+	 * @name iframeUrl
+	 * @localized false
+	 */
+	iframeUrl?: EntryFieldTypes.Symbol;
 }
 
 /**

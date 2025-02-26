@@ -8,7 +8,7 @@ export function MiddleSection() {
 		<section className="-mt-28 -skew-y-2 bg-pink-light px-10 pb-14 pt-48 md:pb-36 lg:-mt-22 lg:pb-52">
 			<div className="mx-auto flex max-w-7xl skew-y-2 flex-col-reverse sm:flex-col">
 				<div className="mx-auto max-w-4xl content-center text-center">
-					<h3 className="mb-11 font-roboto-slab text-3xl font-semibold uppercase md:text-4xl lg:text-5xl">
+					<h3 className="mb-11 font-ss3 text-3xl font-semibold uppercase md:text-4xl lg:text-5xl">
 						kitölteni az egyetemek közti űrt
 					</h3>
 					<p className="text-2xl">

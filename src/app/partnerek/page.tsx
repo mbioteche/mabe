@@ -11,7 +11,7 @@ export default async function PartnersPage() {
 	const partners = await getPartners();
 	return (
 		<>
-			<h1 className="mb-12 font-roboto-slab text-5xl">Partnerek</h1>
+			<h1 className="mb-12 font-ss3 text-5xl">Partnerek</h1>
 			<section
 				className="grid gap-8"
 				style={{
